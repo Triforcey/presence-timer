@@ -4,7 +4,8 @@ exports.Timer = class {
 		this.timer;
 	}
 	startTimer(minTime, maxTime) {
-		stopTimer();
+		this.stopTimer();
+		var self = this;
 		function timeLoop(client) {
 			var users = client.users.array();
 			var presences = [];
@@ -17,7 +18,7 @@ exports.Timer = class {
 				client.user.setPresence(presence);
 			}
 			var delay = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
-			this.timer = setTimeout(timeLoop, delay, client);
+			self.timer = setTimeout(timeLoop, delay, client);
 		}
 		timeLoop(this.client);
 	}
