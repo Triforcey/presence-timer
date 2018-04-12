@@ -1,6 +1,6 @@
 {
   "name": "presence-timer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Make discord.js bots copy the presence of another random user.",
   "main": "index.js",
   "scripts": {
